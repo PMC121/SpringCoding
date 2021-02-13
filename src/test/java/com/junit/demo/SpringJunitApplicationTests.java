@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.List;
 
+import org.hibernate.annotations.SelectBeforeUpdate;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
