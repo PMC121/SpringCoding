@@ -11,9 +11,7 @@ import org.hibernate.annotations.SelectBeforeUpdate;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.Disabled;
-import org.junit.platform.suite.api.SelectClasses;
-import org.junit.platform.suite.api.SelectPackages;
+//import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +30,8 @@ import com.junit.demo.model.Person;
 
                   
 @RunWith(SpringRunner.class)
-@SelectPackages("com.junit.demo")
+@SuiteClasses(com.junit.demo.Test.class)
 @SpringBootTest
-@Disabled
 public class SpringJunitApplicationTests {
 
 	private MockMvc mockMvc;
@@ -66,7 +63,6 @@ public class SpringJunitApplicationTests {
 		}
 	
 	@Test
-	@Disabled
 	public void deleteUser() throws Exception
 	{
 		 MvcResult mvcResult=mockMvc.perform(delete("/Persons/deleteUser/3"))
